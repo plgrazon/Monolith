@@ -1,5 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 import Home from './home.jsx';
 import Store from './store.jsx'
@@ -13,14 +17,20 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-        <nav>
-          <a>Home</a>
-          <a>Store</a>
-        </nav>
-        <Home />
-        <Store />
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/store">Store</Link>
+            </li>
+          </ul>
+          <Route path="/home" component={Home}/>
+          <Route path="/store" component={Store}/>
+        </div>
+      </Router>
     )
   }
 }
