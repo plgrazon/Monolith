@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const model = mongoose.model;
 
 const electronicSchema = new Schema({
   category: String,
@@ -10,7 +9,7 @@ const electronicSchema = new Schema({
   photos: Array
 });
 
-const Electonic = model('Electronic', electronicSchema);
+const Electonic = mongoose.model('Electronic', electronicSchema);
 
 module.exports = {
   Electonic: Electonic

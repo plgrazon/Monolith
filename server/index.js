@@ -6,6 +6,7 @@ const parser = require('body-parser');
 const helmet = require('helmet');
 
 const { db } = require('../db/config');
+const { router } = require('./router/electronicRouter');
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../static')));
 
-app.get('/', (req, res) => res.send('Hello World'));
+app.use('/api', router);
 
 app.listen(PORT, err => {
   if (err) {
