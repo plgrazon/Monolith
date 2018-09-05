@@ -1,11 +1,15 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const parser = require('body-parser');
 const helmet = require('helmet');
 
+const { db } = require('../db/config');
+
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // Middleware for security
 app.use(helmet());
