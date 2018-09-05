@@ -4,7 +4,8 @@
   "description": "A web application dedicated for technology from electronics to industry updates. It also comes with it's own market place.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/plgrazon/Monolith/issues"
   },
-  "homepage": "https://github.com/plgrazon/Monolith#readme"
+  "homepage": "https://github.com/plgrazon/Monolith#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
 }
