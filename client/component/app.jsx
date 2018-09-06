@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  NavLink,
   Link
 } from 'react-router-dom';
 
@@ -21,14 +22,26 @@ class App extends React.Component {
         <div>
           <ul>
             <li>
-              <Link to="/home">Home</Link>
+              <NavLink
+                to="/"
+                exact
+                activeStyle={
+                  {color: "orange"}
+                }
+              >Home</NavLink>
             </li>
             <li>
-              <Link to="/store">Store</Link>
+              <NavLink
+                to="/store"
+                exact
+                activeStyle={
+                  {color: "orange"}
+                }
+              >Store</NavLink>
             </li>
           </ul>
-          <Route path="/home" component={Home}/>
-          <Route path="/store" component={Store}/>
+          <Route path="/" exact component={Home}/>
+          <Route path="/store" exact component={Store}/>
         </div>
       </Router>
     )
